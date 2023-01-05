@@ -1,5 +1,8 @@
+// Selects the drum count through length.
 var drumCount = document.querySelectorAll(".drum").length;
 
+// Iterates over each drum adding an event listener
+// assigned the key var and animates/sounds the selection onclick.
 for (i=0; i<drumCount; i++) {
     document.querySelectorAll(".drum")[i].addEventListener("click", function () {
         var key = this.innerHTML;
@@ -8,12 +11,15 @@ for (i=0; i<drumCount; i++) {
     });
 }
 
+// Takes the key pressed and animates/sounds off.
 document.addEventListener("keydown", function (event) {
     var key = event.key;
     soundOff(key)
     buttAnim(key)
 });
 
+// Soundoff function will take the key inputed and use a logic
+// switch to play the corresponding sound file.
 function soundOff(key) {
 
     switch (key) {
@@ -58,6 +64,7 @@ function soundOff(key) {
 
 }
 
+// Buttanim function that animates the selection shake.
 function buttAnim(key) {
     var currButt = document.querySelector("." + key);
     currButt.classList.add("pressed");

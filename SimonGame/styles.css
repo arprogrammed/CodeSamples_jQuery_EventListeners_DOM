@@ -47,6 +47,7 @@ body {
   background-color: yellow;
 }
 
+/* This class is used for an event listener automation. */
 .pressed {
   box-shadow: 0 0 20px white;
   background-color: grey;
